@@ -1,0 +1,6 @@
+set show-all-if-ambiguous On
+set completion-ignore-case On
+set visible-stats on
+set mark-directories on
+#set keymap vi
+#set editing-mode vi

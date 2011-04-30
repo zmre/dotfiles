@@ -1,0 +1,9 @@
+# Always sort the files
+--sort-files
+
+# Always show color even if piping to another program
+--color
+
+--ignore-dir=production
+--ignore-dir=staging
+--ignore-dir=backup

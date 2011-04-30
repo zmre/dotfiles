@@ -1,0 +1,10 @@
+user = pandora.zmre@spamgourmet.com
+password = guava
+# spanish guitar
+#autostart_station = 31849304284622812
+# classical
+autostart_station = 32755177311858652
+event_command = /Users/pwalsh/Scripts/pianobar_growl.sh
+act_voldown = (
+act_volup = )
+volume = -15

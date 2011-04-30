@@ -1,0 +1,35 @@
+DIR=`echo -ne ${PWD} |sed 's:.*/\([^/]*/.*\):\1:'`
+if [ -z $WHOAMI ] ; then
+	WHOAMI=`whoami`
+fi
+if [ -n "$REALHOST" ] ; then
+	export HOST=$REALHOST
+fi
+if [ -z $HOST ] ; then
+	export HOST=`grep 127 /etc/hosts |awk -F '[ \t]' '{print $3}' |grep -v '^$'`
+	if [ "$HOST" = "" -o "$HOST" = "localhost" -o "$HOST" = "localhost.localdomain" ] ; then
+		HOST=`hostname -s 2>&1`
+		if [ $? -ne 0 ] ; then
+			HOST=`hostname`
+		fi
+		export HOST
+	fi
+fi
+
+if [ -f ~/.varvars ] ; then
+	source ~/.varvars
+fi
+
+GITBRANCH=
+if [ -e .git ] ; then
+    GITBRANCH=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1] /'`
+fi
+
+PS1='\[\033[0m\][\[\033[36m\]\u\[\033[0m\]@\[\033[36m\]$HOST\[\033[0m\]:\[\033[22;32m\]\w\[\033[0m\]\[\033[0m\] \[\033[1;31m\]$GITBRANCH\[\033[0m\](\[\033[1;34m\]$?\[\033[0m\])]\n\$ '
+
+#if [ $TERM = "screen-w" -o $TERM = "screen" ] ; then
+
+#echo -ne "\033[47m"
+jobs
+#echo -ne "\033[0m"
+echo -ne "\033]0;$WHOAMI@$HOST: ..$DIR\007"

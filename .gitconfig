@@ -1,0 +1,61 @@
+[alias]
+	ci = commit -a
+	co = checkout
+	st = status -a
+	wtf = !git-wtf
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --topo-order --date=relative
+	lp = log -p
+	lr = reflog
+	ls = ls-files
+	dall = diff
+	d = diff --relative
+	dv = difftool
+	df = diff --relative --name-only
+	dvf = difftool --relative --name-only
+	dfall = diff --name-only
+	dvfall = difftool --name-only
+	ds = diff --relative --name-status
+	dvs = difftool --relative --name-status
+	dsall = diff --name-status
+	dvsall = difftool --name-status
+	dr = diff-index --cached --name-only --relative HEAD
+	di = diff-index --cached --patch --relative HEAD
+	dfi = diff-index --cached --name-only --relative HEAD
+[core]
+	excludesfile = /Users/pwalsh/.gitignore
+	filemode = false
+[user]
+	name = Patrick Walsh
+	email = patrick.walsh@rightnow.com
+[github]
+	user = zmre
+	token = 2ac70f04f11a0b43cbd48aed24c1a6c3
+[merge]
+	tool = dmerge
+[mergetool "dmerge"]
+	cmd = /usr/local/bin/dmerge "$PWD/$LOCAL" "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$MERGED" 
+	trustExitCode = false
+	keepBackup = false
+[mergetool "diffmerge"]
+	cmd = diffmerge.sh --merge --result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = false
+[diff]
+	tool = diffpicker
+	#tool = vimdiff
+[difftool]
+	prompt = false
+[difftool "diffpicker"]
+	cmd = difftools.sh $LOCAL $REMOTE
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	ui = auto
+[gui]
+	recentrepo = /Users/pwalsh/Dropbox/Dev/RNT/git-trunk
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Dev/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

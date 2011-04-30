@@ -1,0 +1,15 @@
+# /etc/bashrc
+
+# System wide functions and aliases
+# Environment stuff goes in /etc/profile
+
+# are we an interactive shell?
+if [ "$PS1" ]; then
+
+	# Run all the related startup scripts:
+	for i in $HOME/profile.d/*.sh; do
+	    if [ -x $i ]; then
+	        . $i
+	    fi
+	done
+fi

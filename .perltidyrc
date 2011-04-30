@@ -1,0 +1,18 @@
+# This file implements the eSoft TPT code formating standards for perl
+-b		# Make .bak files and modify original files in-place
+-l=80	# Maximum line length
+-ci=4	# Continuation indentation uss 4 spaces (replaced by tab)
+-t		# Indent using tabs
+-et=4	# Replace occurence of 4 leading spacees to be replaced with a tab
+-cti=0	# No extra indentation of ), ] or }
+-pt=1	# Tightness of parens
+-sbt=1	# Tightness of square brackets
+-bt=1	# Tightness of braces
+-bbt=0	# Tightness of block braces
+-nsts	# No space before terminating semicolon
+-nsfs	# No space before semicolons
+-sak="my local our if else elsif while for"	# Space after these keywords
+#-skp	# Space after all keywords
+-ce		# Use "cuddled" else and elseif
+-bar	# Opening brace always on right
+-sot	# Stack open tokens
