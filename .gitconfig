@@ -24,12 +24,6 @@
 [core]
 	excludesfile = /Users/pwalsh/.gitignore
 	filemode = false
-[user]
-	name = Patrick Walsh
-	email = github.zmre@spamgourmet.com
-[github]
-	user = zmre
-	token = 2ac70f04f11a0b43cbd48aed24c1a6c3
 [merge]
 	tool = dmerge
 [mergetool "dmerge"]
@@ -51,8 +45,6 @@
 	diff = auto
 	branch = auto
 	ui = auto
-[gui]
-	recentrepo = /Users/pwalsh/Dropbox/Dev/RNT/git-trunk
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
