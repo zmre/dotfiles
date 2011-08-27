@@ -36,10 +36,6 @@ fi
 alias cd=cd
 #alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 
-if [ -d /Users/pwalsh/Dropbox/Dev/NoteViz ] ; then
-	alias notev="cd /Users/pwalsh/Dropbox/Dev/NoteViz"
-fi
-
 which lft >& /dev/null
 if [ $? -eq 0 ] ; then
 	alias traceroute='lft -EN '
